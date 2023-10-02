@@ -18,7 +18,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "UISheetPresentationControllerCustomDetentObjc",
-                publicHeadersPath: "."),
+                publicHeadersPath: ".",
+               swiftSettings: [
+                .unsafeFlags(["MODULEMAP_FILE=Sources/UISheetPresentationControllerCustomDetentObjc/UISheetPresentationControllerCustomDetentObjc.modulemap"])
+               ]),
         .target(name: "UISheetPresentationControllerCustomDetent",
                 dependencies: ["UISheetPresentationControllerCustomDetentObjc"]),
     ]
